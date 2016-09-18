@@ -4,7 +4,6 @@ var jsdoc = require("gulp-jsdoc3");
 var rename = require("gulp-rename");
 var include = require("gulp-include");
 var version = require("gulp-inject-version");
-var ghPages = require('gulp-gh-pages');
 
 // Paths
 var paths = {
@@ -54,11 +53,6 @@ gulp.task("compile-tests", function () {
 		.pipe(rename("test.js"))
 		.on("error", console.log)
 		.pipe(gulp.dest("./tests"));
-});
-
-gulp.task('publish-docs', function() {
-  return gulp.src('./docs/**/*')
-    .pipe(ghPages());
 });
 
 // WATCH FILES FOR CHANGES

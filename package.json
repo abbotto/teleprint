@@ -1,38 +1,39 @@
 {
-  "name": "teleprint",
-  "description": "Print HTML",
-  "version": "1.0.0",
-  "author": "Jared Abbott",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/abbotto/teleprint.git"
-  },
-  "engines": {
-    "node": "6.5.0"
-  },
-  "scripts": {
-    "delint": "eslint src",
-    "minify": "uglifyjs dist/teleprint.js -m -o dist/teleprint.min.js",
-    "test": "gulp compile-tests && node_modules/mocha/bin/mocha tests/test.js",
-    "start": "npm run delint && gulp default && npm run minify"
-  },
-  "devDependencies": {
-    "bower": "^1.7.9",
-    "chai": "^3.5.0",
-    "eslint": "^3.5.0",
-    "gulp": "^3.9.1",
-    "gulp-bump": "^2.1.0",
-    "gulp-gh-pages": "^0.5.4",
-    "gulp-include": "^2.1.0",
-    "gulp-inject-version": "^1.0.1",
-    "gulp-jsdoc3": "^0.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-util": "^3.0.7",
-    "jsdom": "^9.5.0",
-    "mocha": "^3.0.2",
-    "mocha-jsdom": "^1.1.0",
-    "phantomjs-prebuilt": "^2.1.12",
-    "uglify-js": "^2.7.3"
-  }
+	"name": "teleprint",
+	"description": "Print HTML",
+	"version": "1.0.0",
+	"author": "Jared Abbott",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/abbotto/teleprint.git"
+	},
+	"engines": {
+		"node": "6.5.0"
+	},
+	"scripts": {
+		"gh-pages": "git subtree push --prefix docs origin gh-pages",
+		"delint": "eslint src",
+		"minify": "uglifyjs dist/teleprint.js -m -o dist/teleprint.min.js",
+		"test": "gulp compile-tests && node_modules/mocha/bin/mocha tests/test.js",
+		"start": "npm run delint && gulp default && npm run minify"
+	},
+	"devDependencies": {
+		"bower": "^1.7.9",
+		"chai": "^3.5.0",
+		"eslint": "^3.5.0",
+		"gh-pages-deploy": "^0.4.2",
+		"gulp": "^3.9.1",
+		"gulp-bump": "^2.1.0",
+		"gulp-include": "^2.1.0",
+		"gulp-inject-version": "^1.0.1",
+		"gulp-jsdoc3": "^0.2.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-util": "^3.0.7",
+		"jsdom": "^9.5.0",
+		"mocha": "^3.0.2",
+		"mocha-jsdom": "^1.1.0",
+		"phantomjs-prebuilt": "^2.1.12",
+		"uglify-js": "^2.7.3"
+	}
 }
