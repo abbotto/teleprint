@@ -1,0 +1,34 @@
+{
+    "tags": {
+        "allowUnknownTags": true
+    },
+    "source": {
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+        "destination": "./docs",
+        "readme": "./README.md",
+        "encoding": "utf8"
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false,
+        "default": {
+            "outputSourceFiles": true
+        },
+        "path": "ink-docstrap",
+        "theme": "teleprint",
+        "syntaxTheme": "dark",
+        "navType": "vertical",
+        "inverseNav": true,
+        "linenums": true,
+        "collapseSymbols": false,
+        "dateFormat": "MMMM Do YYYY, h:mm:ss a",
+        "systemName": "Teleprint",
+        "footer": "&nbsp;&nbsp;Teleprint",
+        "copyright": "2016"
+    }
+}
