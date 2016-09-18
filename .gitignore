@@ -1,28 +1,13 @@
 # Initialize Blacklist
-*
-/docs/styles/*.*
+/styles/*.*
 
 # Initialize Whitelist
 !.gitignore
-!gulpfile.js
-!bower.json
-!package.json
-!jsdoc.json
 !license.md
-!README.md
-!.eslintrc
-!.eslintignore
-!/src
-!/src/**/*
-!/dist
-!/dist/**/*
-!/tests
-!/tests/**/*
-!/docs
-!/docs/styles
-!/docs/styles/sunlight.dark.css
-!/docs/styles/site.teleprint.css
+!/**/*
+!/styles
+!/styles/sunlight.dark.css
+!/styles/site.teleprint.css
 
 # Blacklist specific items
-/tests/test.js
 .DS_Store
