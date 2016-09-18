@@ -21,7 +21,7 @@
 
 }("TELEPRINT", typeof window !== "undefined" ? window : this, function () {
 
-	// Let's get it started - IKqV7DB8Iwg
+	// Version
 	var version = "v1.0.0";
 
 	// Dependencies

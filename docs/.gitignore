@@ -1,0 +1,11 @@
+# Initialize Blacklist
+/styles/*.*
+
+# Initialize Whitelist
+!.gitignore
+!/styles
+!/styles/sunlight.dark.css
+!/styles/site.teleprint.css
+
+# Blacklist specific items
+.DS_Store
