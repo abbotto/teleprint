@@ -12,7 +12,7 @@
 		"node": "6.5.0"
 	},
 	"scripts": {
-		"gh-pages": "git subtree push --force --prefix docs origin gh-pages",
+		"gh-pages": "git subtree push --prefix docs origin gh-pages",
 		"delint": "eslint src",
 		"minify": "uglifyjs dist/teleprint.js -m -o dist/teleprint.min.js",
 		"test": "gulp compile-tests && node_modules/mocha/bin/mocha tests/test.js",
