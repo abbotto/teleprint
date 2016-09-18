@@ -20,9 +20,6 @@
 # Documentation exceptions
 !/docs
 !/docs/**/*
-!/docs/styles
-!/docs/styles/sunlight.dark.css
-!/docs/styles/site.teleprint.css
 
 # Blacklist other items
 /tests/test.js
