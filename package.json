@@ -12,7 +12,7 @@
 		"node": "6.5.0"
 	},
 	"scripts": {
-		"gh-pages": "git push origin `git subtree split --prefix docs gh-pages`:gh-pages --force",
+		"gh-pages": "git checkout gh-pages && git checkout master docs/* && git commit -m 'Updated gh-pages' && git push -f && git checkout master",
 		"delint": "eslint src",
 		"minify": "uglifyjs dist/teleprint.js -m -o dist/teleprint.min.js",
 		"test": "gulp compile-tests && node_modules/mocha/bin/mocha tests/test.js",
