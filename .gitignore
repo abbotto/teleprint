@@ -1,6 +1,5 @@
 # Initialize Blacklist
 *
-/docs/styles/*.*
 
 # Initialize Whitelist
 !.gitignore
@@ -18,11 +17,15 @@
 !/dist/**/*
 !/tests
 !/tests/**/*
+# Documentation exceptions
 !/docs
+!/docs/**/*
+/docs/styles
+/docs/styles/**/*
 !/docs/styles
 !/docs/styles/sunlight.dark.css
 !/docs/styles/site.teleprint.css
 
-# Blacklist specific items
+# Blacklist other items
 /tests/test.js
 .DS_Store
