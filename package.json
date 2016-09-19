@@ -4,6 +4,7 @@
 	"version": "1.0.0",
 	"author": "Jared Abbott",
 	"license": "MIT",
+	"keywords": ["print", "html", "css", "dynamic", "dom"],
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/abbotto/teleprint.git"
