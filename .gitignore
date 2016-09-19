@@ -11,6 +11,8 @@
 !README.md
 !.eslintrc
 !.eslintignore
+!teleprint.js
+!teleprint.min.js
 !/src
 !/src/**/*
 !/dist
