@@ -144,16 +144,14 @@ var domPrint = function domPrint(settings) {
 	if (!frame.print) tests.print = false;
 
 	// --------------------------------
-	// Append assets to the document
-	// --------------------------------
-	var head = frameDocument.getElementsByTagName("head")[0];
-	head.appendChild(styleFragment);
-	head.appendChild(scriptFragment);
-
-	// --------------------------------
 	// Execute the print job
 	// --------------------------------
 	if (!test) {
+		// Append assets to the document
+		var head = frameDocument.getElementsByTagName("head")[0];
+		head.appendChild(styleFragment);
+		head.appendChild(scriptFragment);
+
 		// Don't print until the last style/script has loaded
 		head.lastChild.addEventListener("load", function (event) {
 			// In IE, you have to focus() the IFrame prior to printing

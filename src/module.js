@@ -39,7 +39,6 @@
 			this.version = version;
 			return domPrint(settings);
 		};
-
 		// Return the teleprint object and set window.teleprint only if teleprint is undefined
 		return ((window.teleprint = teleprint));
 	}());

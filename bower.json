@@ -1,7 +1,7 @@
 {
   "name": "teleprint",
   "description": "Print HTML",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "Jared Abbott <abbotto@users.noreply.github.com>"
   ],
