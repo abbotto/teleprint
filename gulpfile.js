@@ -43,7 +43,7 @@ gulp.task("compile-scripts", ["compile-docs"], function () {
 		.pipe(version())
 		.pipe(rename("teleprint.js"))
 		.on("error", console.log)
-		.pipe(gulp.dest("./dist"));
+		.pipe(gulp.dest("./"));
 });
 
 gulp.task("compile-tests", function () {
