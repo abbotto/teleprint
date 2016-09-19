@@ -38,5 +38,3 @@
 		"uglify-js": "^2.7.3"
 	}
 }
-
-git add . && git commit -am 'Updated the documentation'
