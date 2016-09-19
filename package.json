@@ -24,7 +24,6 @@
 		"bower": "^1.7.9",
 		"chai": "^3.5.0",
 		"eslint": "^3.5.0",
-		"gh-pages-deploy": "^0.4.2",
 		"gulp": "^3.9.1",
 		"gulp-bump": "^2.1.0",
 		"gulp-include": "^2.1.0",
