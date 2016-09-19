@@ -13,7 +13,7 @@
 	},
 	"scripts": {
 		"prepare-docs": "git checkout gh-pages && git checkout master -- docs && cp -a docs/. docs/../ && rm -rf docs",
-		"publish-docs": "npm run prepare-docs && git add . && git commit -am 'Updated the documentation' && git push -f && git checkout master",
+		"publish-docs": "npm run prepare-docs && git commit -am 'Updated the documentation' && git push -f && git checkout master",
 		"delint": "eslint src",
 		"minify": "uglifyjs dist/teleprint.js -m -o dist/teleprint.min.js",
 		"test": "gulp compile-tests && node_modules/mocha/bin/mocha tests/test.js",
