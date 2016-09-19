@@ -20,11 +20,30 @@
 # Documentation exceptions
 !/docs
 !/docs/**/*
-/docs/styles/*.*
-!/docs/styles
 !/docs/styles/sunlight.dark.css
 !/docs/styles/site.teleprint.css
 
 # Blacklist other items
-/tests/test.js
 .DS_Store
+/tests/test.js
+darkstrap.css  
+sunlight.default.css
+prettify-tomorrow.css         
+site.darkly.css
+site.lumen.css      
+site.slate.css      
+site.yeti.css
+site.darkstrap.css       
+site.paper.css      
+site.spacelab.css
+site.cerulean.css      
+site.dibs-bootstrap.css  
+site.readable.css   
+site.superhero.css
+site.cosmo.css         
+site.flatly.css          
+site.sandstone.css  
+site.cyborg.css        
+site.journal.css         
+site.simplex.css    
+site.united.css
