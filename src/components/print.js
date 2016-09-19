@@ -15,7 +15,7 @@
  * @param {Object} settings settingsuration setting for the print job.
  * @param {String|Element} settings.html A HTML string OR an element whose outerHTML is copied
  * @param {Array} settings.assets URLs for individual assetss
- * @param {Object|Bolean} settings.inherit Copy css and/or js tags to the print document
+ * @param {Object|Boolean} settings.inherit Copy css and/or js tags to the print document
  * @param {Boolean} settings.inherit.css Copy all the existing style tags to the print document
  * @param {Boolean} settings.inherit.js Copy all the existing js tags to the print document
  * @param {Boolean} settings.test Causes the fuction to output a boolean instead of triggering frame.print()
