@@ -24,7 +24,7 @@
 !/docs
 !/docs/styles
 !/docs/styles/sunlight.dark.css
-!/docs/styles//docs/styles/site.teleprint.css
+!/docs/styles/site.teleprint.css
 
 # Blacklist other items
 .DS_Store
