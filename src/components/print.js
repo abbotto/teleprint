@@ -18,7 +18,7 @@
  * @param {Object|Boolean} settings.inherit Copy css and/or js tags to the print document
  * @param {Boolean} settings.inherit.css Copy all the existing style tags to the print document
  * @param {Boolean} settings.inherit.js Copy all the existing js tags to the print document
- * @param {Boolean} settings.test Causes the fuction to output a boolean instead of triggering frame.print()
+ * @param {Boolean} settings.test Causes the fuction to output an object for testing purposes
  * @param {Object} settings.window A reference to a particular window. Default is the current document window
  * 
  * 
