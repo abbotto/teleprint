@@ -4,7 +4,7 @@
  * URL: https://github.com/abbotto/teleprint/
  * Copyright 2016 Jared Abbott
  * Distributed under the MIT license
- * Version %%VERSION%%
+ * Version "v1.0.3"
  */
 
 (function (name, context, factory) {
@@ -22,7 +22,7 @@
 }("TELEPRINT", typeof window !== "undefined" ? window : this, function () {
 
 	// Version
-	var version = "v1.0.2";
+	var version = "%%GULP_INJECT_VERSION%%";
 
 	// Dependencies
 	"use strict";
@@ -105,10 +105,7 @@
 			script.type = "text/javascript";
 			script.async = true;
 	
-			if (!asset) {
-				script.src = "http://localhost";
-			}
-			else {
+			if (!!asset) {
 				script.src = asset;
 			}
 			fragment.appendChild(script);
@@ -202,7 +199,7 @@
 			var lastChild = head.lastChild;
 	
 			// Don't print until the assets are loaded
-			head.lastChild.addEventListener("load", function (event) {
+			lastChild.addEventListener("load", function (event) {
 				// In IE, you have to focus() the IFrame prior to printing
 				// or else the top-level page will print instead
 				frame.focus();
