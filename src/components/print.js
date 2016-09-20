@@ -78,10 +78,7 @@ var domPrint = function domPrint(settings) {
 		script.type = "text/javascript";
 		script.async = true;
 
-		if (!asset) {
-			script.src = "http://localhost";
-		}
-		else {
+		if (!!asset) {
 			script.src = asset;
 		}
 		fragment.appendChild(script);
