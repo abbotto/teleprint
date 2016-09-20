@@ -1,7 +1,12 @@
 # Teleprint
+[![Build Status](https://travis-ci.org/abbotto/teleprint.svg?branch=master)](https://travis-ci.org/abbotto/teleprint)
+
+### What does it do?
+- It can print HTML from the DOM or from a string. 
+- It can apply the current document's styles and scripts to the printed HTML.
+- It can apply custom styles and scripts to the printed HTML.
 
 ## Package Information
-[![Build Status](https://travis-ci.org/abbotto/teleprint.svg?branch=master)](https://travis-ci.org/abbotto/teleprint)
 [![NPM version](https://badge.fury.io/js/teleprint.svg)](http://badge.fury.io/js/teleprint)
 [![GitHub version](https://badge.fury.io/gh/abbotto%2Fteleprint.svg)](https://badge.fury.io/gh/abbotto%2Fteleprint)
 [![Bower version](https://badge.fury.io/bo/teleprint.svg)](http://badge.fury.io/bo/teleprint)
