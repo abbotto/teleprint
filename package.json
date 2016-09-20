@@ -1,7 +1,7 @@
 {
 	"name": "teleprint",
 	"description": "Print HTML",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"author": "Jared Abbott",
 	"license": "MIT",
 	"keywords": ["print", "html", "css", "dynamic", "dom"],

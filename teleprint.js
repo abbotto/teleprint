@@ -22,7 +22,7 @@
 }("TELEPRINT", typeof window !== "undefined" ? window : this, function () {
 
 	// Version
-	var version = "v1.0.1";
+	var version = "v1.0.2";
 
 	// Dependencies
 	"use strict";
@@ -100,6 +100,30 @@
 			return fragment;
 		}
 	
+		function injectScript(fragment, asset, html) {
+			var script = document.createElement("script");
+			script.type = "text/javascript";
+			script.async = true;
+			
+			if (!!html) {
+				script.innerHTML = asset;
+			}
+			else {
+				script.src = asset;
+			}
+			fragment.appendChild(script);
+			return fragment;
+		}
+	
+		function injectLink(fragment, asset) {
+			var link = document.createElement("link");
+			link.type = "text/css";
+			link.rel = "stylesheet";
+			link.href = asset;
+			fragment.appendChild(link);
+			return fragment;
+		}
+	
 		// --------------------------------
 		// Build the iframe document
 		// --------------------------------
@@ -147,18 +171,10 @@
 			for (; i < len; i++) {
 				var ext = assets[i].substr(assets[i].lastIndexOf(".") + 1);
 				if (ext === "css") {
-					link = document.createElement("link");
-					link.type = "text/css";
-					link.rel = "stylesheet";
-					link.href = assets[i];
-					styleFragment.appendChild(link);
+					styleFragment = injectLink(styleFragment, assets[i]);
 				}
 				else if (ext === "js") {
-					script = document.createElement("script");
-					script.type = "text/javascript";
-					script.async = true;
-					script.src = assets[i];
-					scriptFragment.appendChild(script);
+					scriptFragment = injectScript(scriptFragment, assets[i]);
 				}
 			}
 		}
@@ -170,6 +186,11 @@
 		tests.scripts = scriptFragment.children.length;
 		if (!frame.print) tests.print = false;
 	
+		// Ensure there is a lastChild when no assets are provided
+		if (tests.styles === 0 && tests.scripts === 0) {
+			scriptFragment = injectScript(scriptFragment, "// Teleprint", true);
+		}
+	
 		// --------------------------------
 		// Execute the print job
 		// --------------------------------
@@ -179,7 +200,7 @@
 			head.appendChild(styleFragment);
 			head.appendChild(scriptFragment);
 	
-			// Don't print until the last style/script has loaded
+			// Don't print until the assets are loaded
 			head.lastChild.addEventListener("load", function (event) {
 				// In IE, you have to focus() the IFrame prior to printing
 				// or else the top-level page will print instead
