@@ -1,6 +1,6 @@
 describe("Print HTML", function () {
 	jsdom({
-		src: fs.readFileSync("./dist/teleprint.js", "utf-8")
+		src: fs.readFileSync("./teleprint.js", "utf-8")
 	});
 	it("should throw an error if frame.print() won\'t execute", function () {
 		var html = "<div>Hello world!</div>";

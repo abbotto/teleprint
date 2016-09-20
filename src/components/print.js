@@ -73,13 +73,13 @@ var domPrint = function domPrint(settings) {
 		return fragment;
 	}
 
-	function injectScript(fragment, asset, html) {
+	function injectScript(fragment, asset) {
 		var script = document.createElement("script");
 		script.type = "text/javascript";
 		script.async = true;
-		
-		if (!!html) {
-			script.innerHTML = asset;
+
+		if (!asset) {
+			script.src = "http://localhost";
 		}
 		else {
 			script.src = asset;
@@ -161,7 +161,7 @@ var domPrint = function domPrint(settings) {
 
 	// Ensure there is a lastChild when no assets are provided
 	if (tests.styles === 0 && tests.scripts === 0) {
-		scriptFragment = injectScript(scriptFragment, "// Teleprint", true);
+		scriptFragment = injectScript(scriptFragment, false);
 	}
 
 	// --------------------------------
@@ -172,15 +172,22 @@ var domPrint = function domPrint(settings) {
 		var head = frameDocument.getElementsByTagName("head")[0];
 		head.appendChild(styleFragment);
 		head.appendChild(scriptFragment);
+		var lastChild = head.lastChild;
 
 		// Don't print until the assets are loaded
-		head.lastChild.addEventListener("load", function (event) {
+		lastChild.addEventListener("load", function (event) {
 			// In IE, you have to focus() the IFrame prior to printing
 			// or else the top-level page will print instead
 			frame.focus();
 			frame.print();
 			clearFrame(frameName, frameElement);
 		}, 0);
+
+		// Ensure 'load' is fired for lastChild when no assets are provided
+		if (tests.styles === 0 && tests.scripts === 0) {
+			var event = new Event("load");
+			lastChild.dispatchEvent(event);
+		}
 	}
 	// Return the test output
 	else {

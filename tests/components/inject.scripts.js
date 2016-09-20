@@ -1,6 +1,6 @@
 describe("Inject scripts", function () {
 	jsdom({
-		src: fs.readFileSync("./dist/teleprint.js", "utf-8")
+		src: fs.readFileSync("./teleprint.js", "utf-8")
 	});
 	it("should throw an error if no scripts are injected", function () {
 		var html = "<div>Hello world!</div>";
