@@ -103,11 +103,8 @@
 		function injectScript(fragment, asset) {
 			var script = document.createElement("script");
 			script.type = "text/javascript";
-			script.async = true;
-	
-			if (!!asset) {
-				script.src = asset;
-			}
+			script.async = false;
+			script.src = asset;
 			fragment.appendChild(script);
 			return fragment;
 		}
@@ -183,23 +180,14 @@
 		tests.scripts = scriptFragment.children.length;
 		if (!frame.print) tests.print = false;
 	
-		// Ensure there is a lastChild when no assets are provided
-		if (tests.styles === 0 && tests.scripts === 0) {
-			scriptFragment = injectScript(scriptFragment, false);
-		}
-	
 		// --------------------------------
 		// Execute the print job
 		// --------------------------------
 		if (!test) {
-			// Append assets to the document
+			// The load event is fired when a resource
+			// and its dependent resources have finished loading.
 			var head = frameDocument.getElementsByTagName("head")[0];
-			head.appendChild(styleFragment);
-			head.appendChild(scriptFragment);
-			var lastChild = head.lastChild;
-	
-			// Don't print until the assets are loaded
-			lastChild.addEventListener("load", function (event) {
+			head.addEventListener("load", function (event) {
 				// In IE, you have to focus() the IFrame prior to printing
 				// or else the top-level page will print instead
 				frame.focus();
@@ -207,11 +195,9 @@
 				clearFrame(frameName, frameElement);
 			}, 0);
 	
-			// Ensure 'load' is fired for lastChild when no assets are provided
-			if (tests.styles === 0 && tests.scripts === 0) {
-				var event = new Event("load");
-				lastChild.dispatchEvent(event);
-			}
+			// Append assets to the head
+			head.appendChild(styleFragment);
+			head.appendChild(scriptFragment);
 		}
 		// Return the test output
 		else {
