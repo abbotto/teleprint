@@ -4,7 +4,6 @@
  * URL: https://github.com/abbotto/teleprint/
  * Copyright 2016 Jared Abbott
  * Distributed under the MIT license
- * Version "%%GULP_INJECT_VERSION%%"
  */
 
 (function (name, context, factory) {
