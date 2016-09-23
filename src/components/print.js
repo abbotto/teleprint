@@ -45,7 +45,7 @@ var domPrint = function domPrint(settings) {
 	var inherit = settings.inherit || {};
 	var test = settings.test;
 	var document = window.document;
-	var tests = {
+	var job = {
 		styles: 0,
 		scripts: 0,
 		print: true
@@ -147,34 +147,42 @@ var domPrint = function domPrint(settings) {
 	}
 
 	// --------------------------------
-	// Test output
+	// Job output
 	// --------------------------------
-	tests.styles = styleFragment.children.length;
-	tests.scripts = scriptFragment.children.length;
-	if (!frame.print) tests.print = false;
+	job.styles = styleFragment.children.length;
+	job.scripts = scriptFragment.children.length;
+	job.loaded = false;
+	if (!frame.print) job.print = false;
+	if (!!test) { 
+		clearFrame(frameName, frameElement);
+		return job;
+	}
 
 	// --------------------------------
 	// Execute the print job
 	// --------------------------------
-	if (!test) {
-		// The load event is fired when a resource
-		// and its dependent resources have finished loading.
-		var head = frameDocument.getElementsByTagName("head")[0];
-		head.addEventListener("load", function (event) {
-			// In IE, you have to focus() the IFrame prior to printing
-			// or else the top-level page will print instead
-			frame.focus();
-			frame.print();
-			clearFrame(frameName, frameElement);
-		}, 0);
-
-		// Append assets to the head
-		head.appendChild(styleFragment);
-		head.appendChild(scriptFragment);
-	}
-	// Return the test output
-	else {
+	function printJob() {
+		// In IE, you have to focus() the IFrame prior to printing
+		// or else the top-level page will print instead
+		frame.focus();
+		frame.print();
 		clearFrame(frameName, frameElement);
-		return tests;
+		job.loaded = true;
+		return job;
 	}
+
+	// Append assets to the head
+	var head = frameDocument.getElementsByTagName("head")[0];
+	head.appendChild(styleFragment);
+	head.appendChild(scriptFragment);
+
+	// Get the last appended asset
+	var lastChild = head.lastChild;
+	if (!lastChild) return printJob();
+
+	// The load event is fired when a resource
+	// and its dependent resources have finished loading.
+	lastChild.addEventListener("load", function (event) {
+		return printJob();
+	}, 0);
 }
