@@ -213,7 +213,7 @@
 
             
 
-            <td class="description last"><p>settingsuration setting for the print job.</p>
+            <td class="description last"><p>The print job configuration.</p>
                 <h6 class="method-params-label method-subparams-label">Properties</h6>
                 
 
@@ -239,16 +239,13 @@
 
         <tr>
             
-                <td class="name"><code>html</code></td>
+                <td class="name"><code>template</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">String</span>
-|
-
-<span class="param-type">Element</span>
+<span class="param-type">Object</span>
 
 
 
@@ -259,7 +256,105 @@
 
             
 
-            <td class="description last"><p>A HTML string OR an element whose outerHTML is copied</p></td>
+            <td class="description last"><p>The content that will be printed.</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The path to the content that will be printed.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>html</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A HTML string that will printed.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>An element whose outerHTML will be printed.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -283,7 +378,7 @@
 
             
 
-            <td class="description last"><p>URLs for individual assetss</p></td>
+            <td class="description last"><p>URLs for individual assets.</p></td>
         </tr>
 
     
@@ -310,7 +405,7 @@
 
             
 
-            <td class="description last"><p>Copy css and/or js tags to the print document</p>
+            <td class="description last"><p>Set to <code>true</code> to inherit all styles and scripts from the current document.</p>
                 <h6 class="method-params-label method-subparams-label">Properties</h6>
                 
 
@@ -353,7 +448,7 @@
 
             
 
-            <td class="description last"><p>Copy all the existing style tags to the print document</p></td>
+            <td class="description last"><p>Copy all the styles from the current document to the print document.</p></td>
         </tr>
 
     
@@ -377,7 +472,7 @@
 
             
 
-            <td class="description last"><p>Copy all the existing js tags to the print document</p></td>
+            <td class="description last"><p>Copy all the scripts from the current document to the print document.</p></td>
         </tr>
 
     
@@ -385,54 +480,6 @@
 </table>
 
             </td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>test</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Boolean</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Causes the fuction to output an object for testing purposes</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>window</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>A reference to a particular window. Default is the current document window</p></td>
         </tr>
 
     
@@ -503,15 +550,12 @@
     
         <h5>Example</h5>
         
-    <pre class="sunlight-highlight-javascript">var settings = {
-    html: ...,
-    assets: ...,
-    inherit: ...,
-    test: ...,
-    window: ...
-}
-
-teleprint(settings);</pre>
+    <pre class="sunlight-highlight-javascript">teleprint({
+    template: {
+		   html: &quot;&lt;div&gt;Hello world!&lt;/div&gt;&quot;
+    },
+    inherit: true
+});</pre>
 
 
     
@@ -573,7 +617,7 @@ teleprint(settings);</pre>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.1</a>
 	
-		on September 19th 2016, 12:17:00 am
+		on September 25th 2016, 4:55:52 pm
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
