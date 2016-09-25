@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/abbotto/teleprint.svg?branch=master)](https://travis-ci.org/abbotto/teleprint)
 
 ### What does it do?
-- It can print HTML from the DOM or from a string. 
+- It can print HTML from a URL, from the DOM, or from a string. 
 - It can apply the current document's styles and scripts to the printed HTML.
 - It can apply custom styles and scripts to the printed HTML.
 
