@@ -38,31 +38,25 @@
 	 * - When iframe.print() is called, the injected HTML can be printed by the browser.
 	 * - HTML assets can also be injected into the iframe document and applied to the injected HTML.
 	 * 
-	 * @param {Object} settings The print job configuration
-	 * @param {Object} settings.template The content that will be printed
-	 * @param {String} settings.template.url The path to the content that will be printed
-	 * @param {String} settings.template.html A HTML string that will printed
-	 * @param {Object} settings.template.element An element whose outer HTML will be printed
-	 * @param {Array} settings.assets URLs for individual assetss
-	 * @param {Object|Boolean} settings.inherit Copy css and/or js tags to the print document
-	 * @param {Boolean} settings.inherit.css Copy all the existing style tags to the print document
-	 * @param {Boolean} settings.inherit.js Copy all the existing js tags to the print document
-	 * @param {Boolean} settings.test Causes the fuction to output an object for testing purposes
+	 * @param {Object} settings The print job configuration.
+	 * @param {Object} settings.template The content that will be printed.
+	 * @param {String} settings.template.url The path to the content that will be printed.
+	 * @param {String} settings.template.html A HTML string that will printed.
+	 * @param {Object} settings.template.element An element whose outerHTML will be printed.
+	 * @param {Array} settings.assets URLs for individual assetss.
+	 * @param {Object|Boolean} settings.inherit Set to `true` to inherit all styles and scripts from the current document.
+	 * @param {Boolean} settings.inherit.css Copy all the styles from the current document to the print document.
+	 * @param {Boolean} settings.inherit.js Copy all the scripts from the current document to the print document.
 	 * 
 	 * 
 	 * @example
-	 * var settings = {
+	 * teleprint({
 	 *     template: {
-	 * 	       url: ...,
-	 * 		   html: ...,
-	 * 		   element: ...
+	 * 		   html: "<div>Hello world!</div>"
 	 *     },
-	 *     assets: ...,
-	 *     inherit: ...,
-	 *     test: ...
-	 * }
+	 *     inherit: true
+	 * });
 	 * 
-	 * teleprint(settings);
 	 */
 	
 	var domPrint = function domPrint(settings) {
