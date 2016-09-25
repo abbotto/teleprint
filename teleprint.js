@@ -43,7 +43,7 @@
 	 * @param {String} settings.template.url The path to the content that will be printed.
 	 * @param {String} settings.template.html A HTML string that will printed.
 	 * @param {Object} settings.template.element An element whose outerHTML will be printed.
-	 * @param {Array} settings.assets URLs for individual assetss.
+	 * @param {Array} settings.assets URLs for individual assets.
 	 * @param {Object|Boolean} settings.inherit Set to `true` to inherit all styles and scripts from the current document.
 	 * @param {Boolean} settings.inherit.css Copy all the styles from the current document to the print document.
 	 * @param {Boolean} settings.inherit.js Copy all the scripts from the current document to the print document.
