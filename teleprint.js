@@ -21,7 +21,7 @@
 }("TELEPRINT", typeof window !== "undefined" ? window : this, function () {
 
 	// Version
-	var version = "v2.0.1";
+	var version = "v2.0.2";
 
 	// Dependencies
 	"use strict";
@@ -201,11 +201,28 @@
 			var lastChild = head.lastChild;
 			if (!lastChild || !!test) return printJob();
 	
+			var timeout = true, count = 0;
+	
 			// The load event is fired when a resource
-			// and its dependent resources have finished loading.
+			// and its dependent resources have finished loading
+			// * FF and IE browsers wouldn't work without calling setInterval
 			lastChild.addEventListener("load", function (event) {
-				return printJob();
+				timeout = false;
 			}, 0);
+	
+			var interval = setInterval(function () {
+				if (!timeout) {
+					clearInterval(interval);
+					return printJob();
+				}
+				// Fail after trying for 5 seconds
+				else if (count === 20) {
+					clearInterval(interval);
+					console.log("Print job timed out.");
+				}
+	
+				count += 1;
+			}, 250);
 		}
 	}
 
