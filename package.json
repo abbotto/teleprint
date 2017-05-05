@@ -1,7 +1,7 @@
 {
   "name": "teleprint",
   "description": "Print HTML like a boss",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Jared Abbott",
   "license": "MIT",
   "keywords": [
@@ -16,7 +16,7 @@
     "url": "git://github.com/abbotto/teleprint.git"
   },
   "engines": {
-    "node": "6.5.0"
+    "node": "6.10"
   },
   "scripts": {
     "prepare-docs": "git checkout gh-pages && git checkout master -- docs && cp -a docs/. docs/../ && rm -rf docs",
@@ -34,7 +34,7 @@
     "gulp-bump": "^2.1.0",
     "gulp-include": "^2.1.0",
     "gulp-inject-version": "^1.0.1",
-    "gulp-jsdoc3": "^0.2.0",
+    "gulp-jsdoc3": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "http": "0.0.0",
