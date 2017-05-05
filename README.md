@@ -15,7 +15,7 @@
 
 ### Install NPM packages
 
-    nvm use 6.5.0 && npm install
+    nvm use && npm i
 
 ### Build the distribution
 
