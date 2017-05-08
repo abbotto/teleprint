@@ -60,7 +60,7 @@ var domPrint = function domPrint(settings) {
 	function scrapeAssets(arr, fragment) {
 		var clone;
 		var k = 0;
-		var len = arr.length;
+		var len = !!arr ? arr.length : 0;
 		for (; k < len; k++) {
 			// Clone the original style element
 			clone = arr[k].cloneNode(true);
@@ -139,7 +139,7 @@ var domPrint = function domPrint(settings) {
 		if (Array.isArray(assets)) {
 			var link, script;
 			var i = 0;
-			var len = assets.length;
+			var len = !!assets ? assets.length : 0;
 			for (; i < len; i++) {
 				var ext = assets[i].substr(assets[i].lastIndexOf(".") + 1);
 				if (ext === "css") {
@@ -152,8 +152,8 @@ var domPrint = function domPrint(settings) {
 		}
 
 		// Job output
-		job.styles = styleFragment.children.length;
-		job.scripts = scriptFragment.children.length;
+		job.styles = !!styleFragment.children ? styleFragment.children.length : 0;
+		job.scripts = !!scriptFragment.children ? scriptFragment.children.length : 0;
 		job.template = printingTemplate;
 		if (!frame.print) job.print = false;
 

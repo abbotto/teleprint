@@ -21,7 +21,7 @@
 }("TELEPRINT", typeof window !== "undefined" ? window : this, function () {
 
 	// Version
-	var version = "v2.0.2";
+	var version = "v2.0.3";
 
 	// Dependencies
 	"use strict";
@@ -86,7 +86,7 @@
 		function scrapeAssets(arr, fragment) {
 			var clone;
 			var k = 0;
-			var len = arr.length;
+			var len = !!arr ? arr.length : 0;
 			for (; k < len; k++) {
 				// Clone the original style element
 				clone = arr[k].cloneNode(true);
@@ -165,7 +165,7 @@
 			if (Array.isArray(assets)) {
 				var link, script;
 				var i = 0;
-				var len = assets.length;
+				var len = !!assets ? assets.length : 0;
 				for (; i < len; i++) {
 					var ext = assets[i].substr(assets[i].lastIndexOf(".") + 1);
 					if (ext === "css") {
@@ -178,8 +178,8 @@
 			}
 	
 			// Job output
-			job.styles = styleFragment.children.length;
-			job.scripts = scriptFragment.children.length;
+			job.styles = !!styleFragment.children ? styleFragment.children.length : 0;
+			job.scripts = !!scriptFragment.children ? scriptFragment.children.length : 0;
 			job.template = printingTemplate;
 			if (!frame.print) job.print = false;
 	
@@ -225,6 +225,7 @@
 			}, 250);
 		}
 	}
+	
 
 	/**
 	 * @class
