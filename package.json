@@ -1,7 +1,7 @@
 {
   "name": "teleprint",
   "description": "Print HTML like a boss",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "author": "Jared Abbott",
   "license": "MIT",
   "main": "teleprint.js",
@@ -17,15 +17,20 @@
     "url": "git://github.com/abbotto/teleprint.git"
   },
   "engines": {
-    "node": "6.10"
+    "node": "8"
   },
   "scripts": {
-    "prepare-docs": "git checkout gh-pages && git checkout master -- docs && cp -a docs/. docs/../ && rm -rf docs",
-    "publish-docs": "npm run prepare-docs && git commit -am 'Updated the documentation' && git push -f && git checkout master",
-    "delint": "eslint src",
+    "bump:major": "gulp bump-patch",
+    "bump:minor": "gulp bump-minor",
+    "bump:patch": "gulp bump-patch",
+    "doc:compile": "gulp compile-docs",
+    "doc:prepare": "git checkout gh-pages && git checkout master -- docs && cp -a docs/. docs/../ && rm -rf docs",
+    "doc:publish": "npm run doc:prepare && git commit -am 'Updated the documentation' && git push -f && git checkout master",
+    "lint": "eslint src",
     "minify": "uglifyjs teleprint.js -m -o teleprint.min.js",
-    "test": "gulp compile-tests && node_modules/mocha/bin/mocha tests/test.js",
-    "start": "npm run delint && gulp default && npm run minify"
+    "start": "npm run lint && gulp default && npm run minify",
+    "test": "npm start && npm run test:compile && node_modules/mocha/bin/mocha test/test.js",
+    "test:compile": "gulp compile-tests"
   },
   "devDependencies": {
     "bower": "^1.7.9",

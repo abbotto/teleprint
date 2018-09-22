@@ -26,6 +26,7 @@ after(function () {
 
 // Load Teleprint before each test
 let window;
+
 beforeEach(done => {
 	jsdom.env({
 		html: '',

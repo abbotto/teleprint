@@ -1,7 +1,7 @@
 {
   "name": "teleprint",
   "description": "Print HTML like a boss",
-  "version": "2.0.4",
+  "version": "2.1.0",
   "authors": [
     "Jared Abbott <abbotto@users.noreply.github.com>"
   ],
@@ -18,7 +18,6 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "test"
   ]
 }

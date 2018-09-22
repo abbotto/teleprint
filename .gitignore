@@ -1,7 +1,8 @@
-# Initialize Blacklist
+# Blacklist Everything
 *
 
-# Initialize Whitelist
+# Whitelist items
+!.nvmrc
 !.gitignore
 !.travis.yml
 !gulpfile.js
@@ -9,17 +10,22 @@
 !package.json
 !jsdoc.json
 !license.md
+!CONTRIBUTING.md
 !README.md
 !.eslintrc
 !.eslintignore
 !teleprint.js
 !teleprint.min.js
+
 !/src
 !/src/**/*
+
 !/dist
 !/dist/**/*
-!/tests
-!/tests/**/*
+
+!/test
+!/test/**/*
+
 # Documentation exceptions
 !/docs
 !/doc/**/*
@@ -29,9 +35,9 @@
 !/docs/styles/sunlight.dark.css
 !/docs/styles/site.teleprint.css
 
-# Blacklist other items
+# Blacklist items
 .DS_Store
-/tests/test.js
+/test/test.js
 darkstrap.css  
 sunlight.default.css
 prettify-tomorrow.css         

@@ -48,11 +48,11 @@ gulp.task("compile-scripts", ["compile-docs"], function () {
 
 gulp.task("compile-tests", function () {
 	console.log("-- gulp is running task 'compile-tests'");
-	gulp.src("./tests/tasks.js")
+	gulp.src("./test/tasks.js")
 		.pipe(include())
 		.pipe(rename("test.js"))
 		.on("error", console.log)
-		.pipe(gulp.dest("./tests"));
+		.pipe(gulp.dest("./test"));
 });
 
 // WATCH FILES FOR CHANGES

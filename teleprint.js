@@ -7,7 +7,6 @@
  */
 
 (function (name, context, factory) {
-
 	if (typeof module !== "undefined" && module.exports) {
 		module.exports = factory();
 	}
@@ -17,13 +16,9 @@
 	else {
 		context[name] = factory();
 	}
+}("TELEPRINT", typeof window !== "undefined" ? window : this, function TELEPRINT_INIT() {
+	var version = "v2.1.0";
 
-}("TELEPRINT", typeof window !== "undefined" ? window : this, function () {
-
-	// Version
-	var version = "v2.0.4";
-
-	// Dependencies
 	"use strict";
 	
 	/**
@@ -234,13 +229,18 @@
 	 * @description
 	 * Print HTML
 	 */
-	teleprint = (function () {
-		teleprint = function (settings) {
+	teleprint = (function TELEPRINT_IIFE() {
+		teleprint = function TELEPRINT_GLOBAL(settings) {
 			this.version = version;
 			return domPrint(settings);
 		};
-		// Return the teleprint object and set window.teleprint only if teleprint is undefined
-		return ((window.teleprint = teleprint));
+
+		if (typeof window !== "undefined") {
+			window.teleprint = teleprint;
+		}
+
+		return teleprint;
 	}());
 
+	return teleprint;
 }));
