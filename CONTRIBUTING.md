@@ -1,5 +1,9 @@
 # Contributing
 
+## Licensing
+
+All code contributions will be accepted under the [MIT Software License](https://raw.githubusercontent.com/abbotto/elemint/master/LICENSE.md)
+
 ## Bug Reports
 
 A good bug report should contain some or all of the following information:
@@ -32,14 +36,14 @@ A good bug report should contain some or all of the following information:
 ### Use semantic commit messages
 
 - `build`: Changes to the build system and external dependencies.
-- `ci`: Changes to the CI files.
+- `deploy`: Changes to the deployment files.
 - `doc`: Changes to the documentation.
-- `feat`: Add new behaviour to the code.
+- `feat`: Introduce new behaviour in the code.
 - `fix`: Fix malfunctioning code.
 - `perf`: Changes that improve code performance.
-- `refactor`: Restructure code without changing the behaviour.
+- `refactor`: Change code without altering the external behaviour.
 - `style`: Changes based on project conventions and linting rules.
-- `test`: Add or edit tests.
+- `test`: Changes to the testing files and environemnt.
 
 ```
 feat: do all the things
@@ -58,3 +62,5 @@ feat: do all the things
 - Linux
 - Mac OS
 - Windows (via [WSL](https://docs.microsoft.com/en-us/windows/wsl/install-win10))
+
+##### Thank you for reading this document - please feel free to contribute

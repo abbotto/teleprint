@@ -1,61 +1,23 @@
-# Blacklist Everything
+# Ignore Everything
 *
 
 # Whitelist items
-!.nvmrc
-!.gitignore
-!.travis.yml
-!gulpfile.js
-!bower.json
-!package.json
-!jsdoc.json
-!license.md
-!CONTRIBUTING.md
-!README.md
-!.eslintrc
 !.eslintignore
+!.eslintrc.js
+!.gitignore
+!.nvmrc
+!.travis.yml
+!CONTRIBUTING.md
+!LICENSE.md
+!README.md
+!package.json
 !teleprint.js
-!teleprint.min.js
+
+!/dev
+!/dev/**/*
 
 !/src
 !/src/**/*
 
-!/dist
-!/dist/**/*
-
 !/test
 !/test/**/*
-
-# Documentation exceptions
-!/docs
-!/doc/**/*
-/docs/styles/*.*
-!/docs
-!/docs/styles
-!/docs/styles/sunlight.dark.css
-!/docs/styles/site.teleprint.css
-
-# Blacklist items
-.DS_Store
-/test/test.js
-darkstrap.css  
-sunlight.default.css
-prettify-tomorrow.css         
-site.darkly.css
-site.lumen.css      
-site.slate.css      
-site.yeti.css
-site.darkstrap.css       
-site.paper.css      
-site.spacelab.css
-site.cerulean.css      
-site.dibs-bootstrap.css  
-site.readable.css   
-site.superhero.css
-site.cosmo.css         
-site.flatly.css          
-site.sandstone.css  
-site.cyborg.css        
-site.journal.css         
-site.simplex.css    
-site.united.css

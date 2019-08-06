@@ -1,0 +1,1 @@
+module.exports = require('./dev/cfg/eslint.es6.js');

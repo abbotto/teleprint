@@ -1,12 +1,35 @@
 language: node_js
 
+notifications:
+  email: false
+  
+sudo: required
+
 node_js:
-  - "6.10"
+  - "8.9"
+
+env:
+  - CXX=g++-4.8
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - chromium-browser
+
+cache:
+  directories:
+    - node_modules
 
 branches:
   only:
     - master
 
+before_install:
+- export CHROME_BIN=chromium-browser
+
 script:
+  - npm i
   - npm start
   - npm test
