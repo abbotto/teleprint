@@ -6898,6 +6898,7 @@ code {
   max-height: calc(100vh - 62px);
 }
 @media (max-width: 768px) {
+    
   .dropdown-menu {
     max-height: none;
   }
